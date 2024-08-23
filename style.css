@@ -1,0 +1,115 @@
+:root {
+    --Bright-orange: hsl(31, 77%, 52%);
+    --Dark-cyan: hsl(184, 100%, 22%);
+    --Very-dark-cyan: hsl(179, 100%, 13%);
+
+    --Common: hsl(0, 0%, 95%);
+    --Paragraph: hsla(0, 0%, 100%, 0.75);    
+}
+
+* {
+    scrollbar-width: none;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 400;
+    background-color: var(--Common);
+}
+
+.container {
+    margin: 0;
+    display: flex;
+}
+
+.card {
+    --_main-color: var(--main-color, gray);
+    width: 210px;
+    height: 410px;
+    padding: 50px;
+    background-color: var(--_main-color);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-grow: 1;
+}
+img {
+    width: 64px;
+    height: 39px;
+}
+
+.title {
+    font-family: "Big Shoulders Display", sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    color: var(--Common);
+    margin: 30px 0;
+}
+
+.description, button {
+    font-size: 15px;
+    color: var(--Paragraph);
+}
+
+p {
+    line-height: 1.8em;
+    margin-top: 0;
+}
+
+button {
+    color: var(--_main-color);
+    background-color: var(--Common);
+    border: none;
+    padding: 13px 30px;
+    border-radius: 30px;
+    border: 2px solid var(--Common);
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+button:active {
+    background-color: var(--_main-color);
+    color: var(--Common);
+}
+
+.card--1 {
+    --main-color: var(--Bright-orange);
+    border-radius: 10px 0 0 10px;
+}
+
+.card--2 {
+    --main-color: var(--Dark-cyan);
+}
+
+.card--3 {
+    --main-color: var(--Very-dark-cyan);
+    border-radius: 0 10px 10px 0;
+}
+
+@media (width <= 400px) {
+.container {
+    display: block;
+    padding: 15% 0
+}
+
+.card {
+    height: 360px;
+    padding: 45px;
+    width: 230px;
+}
+
+.card--1 {
+    border-radius: 10px 10px 0 0;
+}
+
+.card--3 {
+    border-radius: 0 0 10px 10px;
+}
+
+}
